@@ -11,7 +11,10 @@ class Test{
 			result.put(num, result.getOrDefault(num,0) + 1);
 		}
 		System.out.println(result);
+<<<<<<< HEAD
 		// This is for commit 2
 		// This is for commit 3
+=======
+>>>>>>> parent of b6477ab (added for commit 2)
 	}
 }
