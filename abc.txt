@@ -11,6 +11,9 @@ class Test{
 			result.put(num, result.getOrDefault(num,0) + 1);
 		}
 		System.out.println(result);
+
 		// Great Job
+		// nice work
+
 	}
 }
