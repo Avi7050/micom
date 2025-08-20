@@ -1,0 +1,33 @@
+package com.micom.WelcomeApi.rest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import com.micom.WelcomeApi.client.GreetFeignClient;
+
+@RestController
+public class WelcomeRestController {
+	
+	@Autowired
+	private GreetFeignClient feignClient;
+	
+	private Environment env;
+	
+	@GetMapping("/welcome")
+	public String getWelcomeMsg() {
+		
+		/** Using Rest Template [need to hard code the values] 
+		RestTemplate rt = new RestTemplate();
+		ResponseEntity<String> rtResponse = rt.getForEntity("http://localhost:9091/greet",String.class);
+		String greetResponse = rtResponse.getBody();
+		*/
+		
+		String greetResponse = feignClient.invokeGreetApi();
+		
+		return "Welcome !! " + greetResponse + ": " + env.getProperty("server.port");
+	}
+
+}

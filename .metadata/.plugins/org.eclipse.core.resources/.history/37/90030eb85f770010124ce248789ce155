@@ -1,0 +1,11 @@
+package com.micom.WelcomeApi.client;
+
+import org.springframework.web.bind.annotation.GetMapping;
+
+@org.springframework.cloud.openfeign.FeignClient(name = "GreetAPI")
+public interface GreetFeignClient {
+	
+	@GetMapping("/greet")
+	public String invokeGreetApi();
+
+}

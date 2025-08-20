@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: WelcomeAPI
+  boot:
+    admin:
+      client:
+        url: http://localhost:1111/
+        
+server:
+  port: 8082
+        
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        
+#if the port is anything else then we require this
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka
+ 

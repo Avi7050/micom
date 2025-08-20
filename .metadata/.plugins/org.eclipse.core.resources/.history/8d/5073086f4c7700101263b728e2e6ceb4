@@ -1,0 +1,5 @@
+package com.micom.WelcomeApi.rest;
+
+public class WelcomeRestController {
+
+}

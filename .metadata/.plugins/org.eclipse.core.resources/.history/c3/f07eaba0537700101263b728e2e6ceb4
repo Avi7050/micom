@@ -1,0 +1,22 @@
+package com.micom.WelcomeApi.rest;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+@RestController
+public class WelcomeRestController {
+	
+	@GetMapping("/welcome")
+	public String getWelcomeMsg() {
+		
+//		Using Rest Template
+		RestTemplate rt = new RestTemplate();
+		ResponseEntity<String> rtResponse = rt.getForEntity("http://localhost:9091/greet",String.class);
+		String greetResponse = rtResponse.getBody();
+		
+		return "Welcome !! " + greetResponse;
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.micom.GreetApi.rest;
+
+public class GreestRestController {
+
+}
