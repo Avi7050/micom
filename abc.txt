@@ -1,0 +1,15 @@
+
+
+import java.util.*;
+
+class Test{
+	public static void main(String[] args){
+		int[] arr = {1,1,1,2,2,2,2,2,3,3,4,4,4};
+
+		Map<Integer, Integer> result = new TreeMap<>();
+		for(int num : arr){
+			result.put(num, result.getOrDefault(num,0) + 1);
+		}
+		System.out.println(result);
+	}
+}
