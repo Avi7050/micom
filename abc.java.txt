@@ -12,5 +12,6 @@ class Test{
 		}
 		System.out.println(result);
 		// This is for commit 2
+		// This is for commit 3
 	}
 }
